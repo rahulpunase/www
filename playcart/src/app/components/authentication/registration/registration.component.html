@@ -13,11 +13,8 @@
         <mat-form-field class="select-code">
           <mat-label>Code</mat-label>
           <mat-select>
-            <mat-option>
-              +1
-            </mat-option>
-            <mat-option>
-              +2
+            <mat-option *ngFor="let country of countryCode" [value]="country.phonecode">
+              {{ country.name }} +{{ country.phonecode }}
             </mat-option>
           </mat-select>
         </mat-form-field>

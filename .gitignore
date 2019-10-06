@@ -3,3 +3,4 @@
 /playcart/node_modules
 /playcart-server/node_modules
 .DS_Store
+/playcart-server/server/logs

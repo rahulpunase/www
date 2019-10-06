@@ -22,6 +22,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { Interceptor } from './services/http.interceptor';
+import { FetchStaticDataService } from './services/fetch-static-data.service';
+import { HttpBaseService } from './services/http/http-base.service';
 
 
 
@@ -44,6 +48,7 @@ import { MatSelectModule } from '@angular/material/select';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
@@ -52,7 +57,15 @@ import { MatSelectModule } from '@angular/material/select';
     MatDividerModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    },
+    FetchStaticDataService,
+    HttpBaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

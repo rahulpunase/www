@@ -1,19 +1,24 @@
 import express from 'express';
-import path from 'path';
-import bodyParser from 'body-parser';
 import cors from 'cors';
-import { logger } from './middlewares/logger.middleware';
-import appRouter from './router/app.router';
+import { logger } from './utils/logger.util';
+import countryRouter from './routers/country.router';
 
 const app = express();
-const socket = require('socket.io');
+
+app.listen(3000, function (err) {
+    if (err) {
+        console.log('Error in listening')
+    } else {
+        console.log('Listening...');
+    }
+});
 
 app.use(cors({
     origin: ["http://localhost:4200"]
 }));
 /* Other middlewares and routes */
 
-app.use("/chatapp", appRouter);
+app.use("/static", countryRouter);
 app.use((err, req, res, next) => {
     logger("SOME ERROR OCCURED");
     logger(err.stack.split('\n'));

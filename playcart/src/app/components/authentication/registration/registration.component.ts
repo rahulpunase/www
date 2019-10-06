@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Country } from 'src/app/interfaces/country';
+import { FetchStaticDataService } from 'src/app/services/fetch-static-data.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * Country code along with the name and id
+  */
+  countryCode: Array<Country> = [];
+  constructor(private fetchStaticDataService: FetchStaticDataService) { }
 
   ngOnInit() {
+    this.fetchStaticDataService.getCountryCodes().subscribe(countryCode => {
+      this.countryCode = countryCode;
+    });
   }
 
 }
