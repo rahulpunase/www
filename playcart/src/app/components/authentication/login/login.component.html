@@ -1,0 +1,41 @@
+<mat-card class="form-card">
+  <!--MatCard Header-->
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <!--Login Form-->
+  <form>
+    <div class="login-form-container">
+      <mat-form-field>
+        <input matInput name="emailOrPhoneNumber" placeholder="Email or mobile phone number">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="password" placeholder="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary">Login</button>
+    </div>
+  </form>
+  <!--term-and-policy-->
+  <div class="condition-container">
+    <div class="term-and-policy">
+      <span class="objective">By continuing, you agree to Amazon's <a routerLink="#">Conditions of Use</a> and <a
+        routerLink="#">Privacy Notice</a>.</span>
+    </div>
+  </div>
+  <!--Forgot Password-->
+  <div class="forgot-password">
+    <div class="help">
+      <span class="help-content">Help?</span>
+    </div>
+    <div class="fp-n-oi">
+      <span class="fp-content"><a routerLink="forgot-password">Forgot Password</a> or having other <a
+        routerLink="/other-issues">issues in signing in</a>.</span>
+    </div>
+  </div>
+</mat-card>
+  <!--  Class-button-->
+<div class="classy-button">
+  <a mat-button routerLink="/auth/registration">Create your Account</a>
+</div>
+
+

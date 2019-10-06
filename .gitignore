@@ -1,0 +1,5 @@
+/.idea
+/node_modules
+/playcart/node_modules
+/playcart-server/node_modules
+.DS_Store

@@ -1,0 +1,44 @@
+<mat-card class="form-card">
+  <!--MatCard Header-->
+  <mat-card-header>
+    <mat-card-title>Create an account</mat-card-title>
+  </mat-card-header>
+  <!--Login Form-->
+  <form>
+    <div class="registration-form-container">
+      <mat-form-field>
+        <input matInput name="username" placeholder="Your name">
+      </mat-form-field>
+      <div class="row">
+        <mat-form-field class="select-code">
+          <mat-label>Code</mat-label>
+          <mat-select>
+            <mat-option>
+              +1
+            </mat-option>
+            <mat-option>
+              +2
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="phone-number">
+          <input matInput name="phoneNumber" placeholder="Phone number">
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <input matInput name="email" placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="password" placeholder="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary">Create account</button>
+    </div>
+  </form>
+</mat-card>
+<!--  Class-button-->
+<div class="classy-button">
+  <span>Already have an account? <a mat-button routerLink="/auth/login">Login</a></span>
+</div>
+
+
+
