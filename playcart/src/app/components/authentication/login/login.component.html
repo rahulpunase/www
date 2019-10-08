@@ -4,15 +4,15 @@
     <mat-card-title>Login</mat-card-title>
   </mat-card-header>
   <!--Login Form-->
-  <form>
+  <form [formGroup]="lf" (submit)="onLoginFormSubmit()">
     <div class="login-form-container">
       <mat-form-field>
-        <input matInput name="emailOrPhoneNumber" placeholder="Email or mobile phone number">
+        <input type="text" formControlName="emailOrPhoneNumber" matInput name="emailOrPhoneNumber" placeholder="Email or mobile phone number">
       </mat-form-field>
       <mat-form-field>
-        <input matInput name="password" placeholder="password">
+        <input formControlName="password" matInput name="password" type="password" placeholder="password">
       </mat-form-field>
-      <button mat-raised-button color="primary">Login</button>
+      <button [disabled]="!lf.valid" mat-raised-button color="primary">Login</button>
     </div>
   </form>
   <!--term-and-policy-->

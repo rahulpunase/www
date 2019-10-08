@@ -11,27 +11,23 @@ import { RegistrationComponent } from './components/authentication/registration/
 import { ForgotPasswordComponent } from './components/authentication/forgot-password/forgot-password.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoComponent } from './components/_common-components/logo/logo.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 /**
  * Material imports STARTS -->
  * */
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
+/**
+ * Material imports ENDS
+ * */
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Interceptor } from './services/http.interceptor';
 import { FetchStaticDataService } from './services/fetch-static-data.service';
 import { HttpBaseService } from './services/http/http-base.service';
-
-
-
-/**
- * Material imports ENDS
- * */
 
 
 @NgModule({
@@ -55,7 +51,9 @@ import { HttpBaseService } from './services/http/http-base.service';
     MatCardModule,
     MatButtonModule,
     MatDividerModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
