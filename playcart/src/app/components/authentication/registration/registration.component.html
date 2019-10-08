@@ -4,31 +4,31 @@
     <mat-card-title>Create an account</mat-card-title>
   </mat-card-header>
   <!--Login Form-->
-  <form>
+  <form [formGroup]="rf" (submit)="createUserAccount()">
     <div class="registration-form-container">
       <mat-form-field>
-        <input matInput name="username" placeholder="Your name">
+        <input formControlName="name" type="name" matInput name="username" placeholder="Your name">
       </mat-form-field>
       <div class="row">
         <mat-form-field class="select-code">
           <mat-label>Code</mat-label>
-          <mat-select>
+          <mat-select formControlName="phonecode" >
             <mat-option *ngFor="let country of countryCode" [value]="country.phonecode">
               {{ country.name }} +{{ country.phonecode }}
             </mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="phone-number">
-          <input matInput name="phoneNumber" placeholder="Phone number">
+          <input formControlName="phonenumber" type="number" matInput name="phoneNumber" placeholder="Phone number">
         </mat-form-field>
       </div>
       <mat-form-field>
-        <input matInput name="email" placeholder="Email">
+        <input formControlName="email" type="email" matInput name="email" placeholder="Email">
       </mat-form-field>
       <mat-form-field>
-        <input matInput name="password" placeholder="password">
+        <input formControlName="password" type="password" matInput name="password" placeholder="password">
       </mat-form-field>
-      <button mat-raised-button color="primary">Create account</button>
+      <button [disabled]="!rf.valid" mat-raised-button color="primary">Create account</button>
     </div>
   </form>
 </mat-card>

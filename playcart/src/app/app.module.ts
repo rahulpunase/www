@@ -28,6 +28,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { Interceptor } from './services/http.interceptor';
 import { FetchStaticDataService } from './services/fetch-static-data.service';
 import { HttpBaseService } from './services/http/http-base.service';
+import { UserRelatedService } from './services/user-related.service';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { HttpBaseService } from './services/http/http-base.service';
       multi: true
     },
     FetchStaticDataService,
-    HttpBaseService
+    HttpBaseService,
+    UserRelatedService
   ],
   bootstrap: [AppComponent]
 })

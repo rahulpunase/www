@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { logger } from './utils/logger.util';
 import countryRouter from './routers/country.router';
+import authenticationRouter from './routers/authentication.router';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cors({
 /* Other middlewares and routes */
 
 app.use("/static", countryRouter);
+app.use("/authentication", authenticationRouter);
 app.use((err, req, res, next) => {
     logger("SOME ERROR OCCURED");
     logger(err.stack.split('\n'));

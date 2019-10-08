@@ -13,4 +13,8 @@ export class HttpBaseService {
   _getCountryCodes(): Observable<Array<Country>> {
     return this.http.get <Array<Country>>(this.domainUrl +  '/static/getcountrycodes');
   }
+
+  _createUserAccount(): Observable<any> {
+    return this.http.post <any> (this.domainUrl + '/authentication/createuseraccount', {});
+  }
 }
